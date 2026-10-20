@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Salteña de pollo · La Jugosa</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+  <header class="navbar">
+    <div class="contenedor">
+      <a class="logo" href="index.html">La Jugosa</a>
+      <nav>
+        <ul class="menu">
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="menu.html" class="activo" aria-current="page">Menú</a></li>
+          <li><a href="carrito.html">Carrito</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="contenedor seccion">
+    <a class="volver" href="menu.html">← Volver al menú</a>
+    <div class="detalle">
+      <img src="img/pollo.jpg" alt="Salteña de pollo">
+      <div>
+        <h1>Salteña de pollo</h1>
+        <p class="precio">8 Bs c/u</p>
+        <p class="descripcion">Masa dorada y crocante, rellena de pollo jugoso con papa, arveja, huevo y aceituna. Horneada cada mañana.</p>
+        <p class="etiqueta">Cantidad</p>
+        <div class="cantidad">
+          <button type="button" id="menos" aria-label="Quitar una">−</button>
+          <span id="numero">2</span>
+          <button type="button" id="mas" aria-label="Agregar una">+</button>
+        </div>
+        <a class="boton" href="carrito.html">Agregar al carrito</a>
+      </div>
+    </div>
+  </main>
+
+  <footer class="pie">
+    <div class="contenedor">La Jugosa · Calle Las Salteñas 123, La Paz · Abierto todos los días de 7:00 a 13:00</div>
+  </footer>
+
+  <script>
+    const numero = document.getElementById('numero');
+    document.getElementById('menos').addEventListener('click', () => {
+      if (Number(numero.textContent) > 1) numero.textContent = Number(numero.textContent) - 1;
+    });
+    document.getElementById('mas').addEventListener('click', () => {
+      numero.textContent = Number(numero.textContent) + 1;
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pedido confirmado · La Jugosa</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+  <header class="navbar">
+    <div class="contenedor">
+      <a class="logo" href="index.html">La Jugosa</a>
+      <nav>
+        <ul class="menu">
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="menu.html">Menú</a></li>
+          <li><a href="carrito.html">Carrito</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="contenedor seccion centrado">
+    <div class="confirmacion">
+      <div class="check" aria-hidden="true">
+        <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+      </div>
+      <h1>¡Pedido confirmado!</h1>
+      <p id="saludo">Gracias por tu pedido.</p>
+      <p>Tu número de pedido es</p>
+      <p class="pedido">#0427</p>
+      <p>Recógelo hoy a las <strong id="hora">10:30</strong> en Calle Las Salteñas 123.</p>
+      <a class="boton" href="index.html">Volver al inicio</a>
+    </div>
+  </main>
+
+  <footer class="pie">
+    <div class="contenedor">La Jugosa · Calle Las Salteñas 123, La Paz · Abierto todos los días de 7:00 a 13:00</div>
+  </footer>
+
+  <script>
+    const datos = new URLSearchParams(window.location.search);
+    if (datos.get('nombre')) {
+      document.getElementById('saludo').textContent = 'Gracias, ' + datos.get('nombre') + '.';
+    }
+    if (datos.get('hora')) {
+      document.getElementById('hora').textContent = datos.get('hora');
+    }
+  </script>
+</body>
+</html>

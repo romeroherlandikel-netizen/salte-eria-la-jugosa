@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Carrito · La Jugosa</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+  <header class="navbar">
+    <div class="contenedor">
+      <a class="logo" href="index.html">La Jugosa</a>
+      <nav>
+        <ul class="menu">
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="menu.html">Menú</a></li>
+          <li><a href="carrito.html" class="activo" aria-current="page">Carrito</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="contenedor seccion">
+    <h1>Tu carrito</h1>
+    <div class="carrito">
+      <div>
+        <div class="item"><span>Salteña de pollo × 2</span><span>16 Bs</span></div>
+        <div class="item"><span>Salteña picante × 1</span><span>8 Bs</span></div>
+        <div class="total"><span>Total</span><span>24 Bs</span></div>
+      </div>
+
+      <form class="panel" action="confirmado.html">
+        <h2>Datos del pedido</h2>
+        <label for="nombre">Nombre</label>
+        <input id="nombre" name="nombre" type="text" placeholder="Ej: Ana Quispe" required>
+
+        <label for="hora">Hora de recojo</label>
+        <select id="hora" name="hora">
+          <option>10:00</option>
+          <option selected>10:30</option>
+          <option>11:00</option>
+        </select>
+
+        <fieldset>
+          <legend>Forma de pago</legend>
+          <label class="opcion"><input type="radio" name="pago" value="QR" checked> Pago con QR</label>
+          <label class="opcion"><input type="radio" name="pago" value="Efectivo"> Efectivo al recoger</label>
+        </fieldset>
+
+        <button class="boton" type="submit">Confirmar pedido</button>
+      </form>
+    </div>
+  </main>
+
+  <footer class="pie">
+    <div class="contenedor">La Jugosa · Calle Las Salteñas 123, La Paz · Abierto todos los días de 7:00 a 13:00</div>
+  </footer>
+</body>
+</html>
